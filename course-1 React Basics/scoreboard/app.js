@@ -4,4 +4,12 @@ const title = React.createElement(
   "My First React Element!"
 );
 
-ReactDOM.render(title, document.getElementById("root"));
+const desc = React.createElement(
+  "p",
+  null,
+  "I just learned how to create a React Node and render it into the DOM."
+);
+
+const header = React.createElement("header", null, title, desc);
+
+ReactDOM.render(header, document.getElementById("root"));

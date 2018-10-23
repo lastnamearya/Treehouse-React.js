@@ -1,17 +1,19 @@
-const title = "My First React Element!";
+// function Header() {
+//   return (
+//     <header>
+//       <h1>Scoreboard</h1>
+//       <span className="stats">Players: 1</span>
+//     </header>
+//   );
+// }
 
-const desc =
-  "I just learned how to create a React node and render it into the screen";
+// Implicit Return with Arrow Functional Component ~ When we only returning some JSX within the component.
 
-const myTitleID = "main-title";
-
-const header = (
+const Header = () => (
   <header>
-    <h1 id={myTitleID}>{title}</h1>
-    <p>{desc}</p>
+    <h1>Scoreboard</h1>
+    <span className="stats">Players: 1</span>
   </header>
 );
 
-console.log(header);
-
-ReactDOM.render(header, document.getElementById("root"));
+ReactDOM.render(<Header />, document.getElementById("root"));

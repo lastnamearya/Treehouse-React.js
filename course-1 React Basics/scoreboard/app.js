@@ -1,9 +1,12 @@
-const Header = props => (
-  <header>
-    <h1>{props.title}</h1>
-    <span className="stats">Players: {props.totalPlayers}</span>
-  </header>
-);
+const Header = props => {
+  let { title, totalPlayers } = props;
+  return (
+    <header>
+      <h1>{title}</h1>
+      <span className="stats">Players: {totalPlayers}</span>
+    </header>
+  );
+};
 
 const Player = () => {
   return (

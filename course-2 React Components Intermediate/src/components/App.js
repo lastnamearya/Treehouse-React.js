@@ -18,14 +18,22 @@ class App extends React.Component {
       {
         name: "Ashley",
         id: 3,
-        score: 0
+        score: 2
       },
       {
         name: "James",
         id: 4,
-        score: 0
+        score: 1
       }
     ]
+  };
+
+  totalScore = () => {
+    var x = 0;
+    for (let i = 0; i < this.state.players.length; i++) {
+      x += this.state.players[i].score;
+    }
+    return x;
   };
 
   handleRemovePlayer = id => {
@@ -47,7 +55,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="scoreboard">
-        <Header title="Scoreboard" totalPlayers={this.state.players.length} />
+        <Header
+          title="Scoreboard"
+          totalPlayers={this.state.players.length}
+          totalPoints={this.totalScore()}
+        />
 
         {/* Players list */}
         {this.state.players.map((player, index) => (

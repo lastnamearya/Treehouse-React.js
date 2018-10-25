@@ -18,22 +18,20 @@ class App extends React.Component {
       {
         name: "Ashley",
         id: 3,
-        score: 2
+        score: 0
       },
       {
         name: "James",
         id: 4,
-        score: 1
+        score: 0
       }
     ]
   };
 
   totalScore = () => {
-    var x = 0;
-    for (let i = 0; i < this.state.players.length; i++) {
-      x += this.state.players[i].score;
-    }
-    return x;
+    return this.state.players.reduce((total, player) => {
+      return total + player.score;
+    }, 0);
   };
 
   handleRemovePlayer = id => {

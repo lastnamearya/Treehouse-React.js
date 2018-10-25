@@ -29,10 +29,25 @@ class App extends React.Component {
     ]
   };
 
+  prevStateID = this.state.players.length;
+
   totalScore = () => {
     return this.state.players.reduce((total, player) => {
       return total + player.score;
     }, 0);
+  };
+
+  handleAddPlayer = name => {
+    this.setState({
+      players: [
+        ...this.state.players,
+        {
+          name: name,
+          score: 0,
+          id: (this.prevStateID += 1)
+        }
+      ]
+    });
   };
 
   handleRemovePlayer = id => {
@@ -73,7 +88,7 @@ class App extends React.Component {
           />
         ))}
 
-        <AddPlayerForm />
+        <AddPlayerForm addPlayer={this.handleAddPlayer} />
       </div>
     );
   }

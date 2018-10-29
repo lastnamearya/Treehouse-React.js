@@ -20,4 +20,8 @@ Header.propTypes = {
   totalPoints: PropTypes.number
 };
 
+Header.defaultProps = {
+  title: "Scoreboard"
+};
+
 export default Header;
